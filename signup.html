@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign up</title>
+        <link rel="stylesheet" href="style3.css">
+    </head>
+    <body>
+        <header>
+            <a href="/basic.html" class="logo">
+                <img src="logo.jpeg" alt="Site logo" height="100px">
+            </a>
+            <h1 id="name">Chanakya Bank</h1>
+            <nav class="navigtab">
+                <ul>
+                <li><a href="/basic.html"> Home</a></li>
+                <li><a href="login.html"> Personal</a></li>
+                <li><a href="login.html"> Buisness</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form action="">
+                <h1>Sign up</h1>
+                <br>
+                Fullname
+                <input placeholder="Fullname" required>
+                <br>
+                permanent adress 
+                <input placeholder="adrs" required>
+                <br>
+                choose you ID proof:
+                <input type="radio" id="Adhaar" name="ID" value="adhaar">
+                <label for="Adhaar">Adhaar</label>
+
+                <input type="radio" id="Pan" name="ID" vaule="pan">
+                <label for="Pan">Pan</label>
+                <br>
+
+                <div id="Adhaar_no" style="display: none;">
+                    <input type="text" placeholder="Ano" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}">
+                </div>
+
+                <div id="Pan_no" style="display: none;">
+                    <input type="text" placeholder="Pno" pattern="[a-z]{2}[0-9]{5}">
+                </div>
+                <br>
+                 Enter a 4-digit password:
+                <input type="password" placeholder="password" pattern="[0-9]{4}">
+                <br>
+                Enter you're first deposit:
+                <input placeholder="Deposit">
+                <br>                
+                <button type="submit">SUBMIT</button>
+        </form>
+        <script>
+            const Adhaar = document.getElementById('Adhaar');
+            const Pan = document.getElementById('Pan');
+            const Adhaar_no = document.getElementById('Adhaar_no');
+            const Pan_no = document.getElementById('Pan_no');
+            
+            Adhaar.addEventListener('change', function() {
+                if (this.checked) {
+                    Adhaar_no.style.display = 'block';
+                    Pan_no.style.display = 'none';
+                }
+            });
+            
+            Pan.addEventListener('change', function() {
+                if (this.checked) {
+                    Pan_no.style.display = 'block';
+                    Adhaar_no.style.display = 'none';
+                }
+            });
+        </script>
+        </main>
+    </body>
+</html>
